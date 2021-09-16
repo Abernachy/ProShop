@@ -76,7 +76,7 @@ export const register = (name, email, password) => async (dispatch) => {
 			type: USER_REGISTER_SUCCESS,
 			payload: data,
 		})
-		//log the user in as soon as he/she makes an account
+
 		dispatch({
 			type: USER_LOGIN_SUCCESS,
 			payload: data,
