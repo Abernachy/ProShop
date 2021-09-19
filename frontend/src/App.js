@@ -39,6 +39,11 @@ const App = () => {
         component = { ProfileScreen }
         exact / >
         <
+        <
+        Route path = "/admin/userlist"
+        component = { UserListScreen }
+        exact / >
+        <
         Route path = "/product/:id"
         component = { ProductScreen }
         exact / >
@@ -67,12 +72,12 @@ const App = () => {
         component = { HomeScreen }
         exact / >
         <
-        /Container>{" "} <
-        /main>{" "} <
+        /Container>{" "} < /
+        main > { " " } <
         Footer / >
         <
-        />{" "} <
-        /Router>
+        />{" "} < /
+        Router >
     );
 };
 
