@@ -1,11 +1,13 @@
 import express from 'express'
 const router = express.Router()
-import {
-	getProducts,
-	getProductById,
-} from '../controllers/productController.js'
+import * as product from '../controllers/productController.js'
+import { protect, admin } from '../middleware/authMiddleWare.js'
 
-router.route('/').get(getProducts)
-router.route('/:id').get(getProductById)
+router.route('/').get(product.getProducts).post(protect, admin, product.createProduct)
+router
+	.route('/:id')
+	.get(product.getProductById)
+	.delete(protect, admin, product.deleteProduct)
+	.put(protect, admin, product.updateProduct)
 
 export default router
