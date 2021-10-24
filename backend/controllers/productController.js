@@ -5,7 +5,17 @@ import Product from '../models/productModel.js'
 //@route  GET  /api/products
 //@acces  Public
 export const getProducts = asyncHandler(async (req, res) => {
-	const products = await Product.find({})
+	// You use req.query when you have a query parameter in the url , in this example its looking for an item
+	const keyword = req.query.keyword
+		? {
+				name: {
+					$regex: req.query.keyword,
+					$options: 'i',
+				},
+		  }
+		: {}
+
+	const products = await Product.find({ ...keyword })
 	res.json(products)
 })
 
