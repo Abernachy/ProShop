@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Form, Button, Row, Col } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
-import Message from '../components/Message'
-import Loader from '../components/Loader'
-import FormContainer from '../components/FormContainer'
+import Message from '../Components/Message'
+import Loader from '../Components/Loader'
+import FormContainer from '../Components/FormContainer'
 import { register } from '../actions/userActions'
 
 const RegisterScreen = ({ location, history }) => {
@@ -84,10 +84,7 @@ const RegisterScreen = ({ location, history }) => {
 			</Form>
 			<Row className='py-3'>
 				<Col>
-					Have an account?{' '}
-					<Link to={redirect ? `/login?redirect=${redirect}` : `/login`}>
-						Login
-					</Link>
+					Have an account? <Link to={redirect ? `/login?redirect=${redirect}` : `/login`}>Login</Link>
 				</Col>
 			</Row>
 		</FormContainer>

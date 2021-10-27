@@ -2,8 +2,8 @@ import React, { useEffect } from 'react'
 import { LinkContainer } from 'react-router-bootstrap'
 import { Table, Button } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
-import Message from '../components/Message'
-import Loader from '../components/Loader'
+import Message from '../Components/Message'
+import Loader from '../Components/Loader'
 import { listUsers, deleteUser } from '../actions/userActions'
 
 const UserListScreen = ({ history }) => {
@@ -62,7 +62,11 @@ const UserListScreen = ({ history }) => {
 									<a href={`mailto:${user.email}`}>{user.email}</a>
 								</td>
 								<td>
-									{user.isAdmin ? <i className='fas fa-check' style={{ color: 'green' }}></i> : <i className='fas fa-times' style={{ color: 'red' }}></i>}
+									{user.isAdmin ? (
+										<i className='fas fa-check' style={{ color: 'green' }}></i>
+									) : (
+										<i className='fas fa-times' style={{ color: 'red' }}></i>
+									)}
 								</td>
 								<td>
 									<LinkContainer to={`/admin/user/${user._id}/edit`}>

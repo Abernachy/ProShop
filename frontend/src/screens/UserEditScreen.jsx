@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Form, Button } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
-import Message from '../components/Message'
-import Loader from '../components/Loader'
-import FormContainer from '../components/FormContainer'
+import Message from '../Components/Message'
+import Loader from '../Components/Loader'
+import FormContainer from '../Components/FormContainer'
 import { getUserDetails, updateUser } from '../actions/userActions'
 import { USER_UPDATE_RESET } from '../constants/userConstants'
 
@@ -60,16 +60,28 @@ const UserEditScreen = ({ match, history }) => {
 					<Form onSubmit={submitHandler}>
 						<Form.Group controlId='name'>
 							<Form.Label>Name</Form.Label>
-							<Form.Control type='name' placeholder='Enter your name' value={name} onChange={(e) => setName(e.target.value)}></Form.Control>
+							<Form.Control
+								type='name'
+								placeholder='Enter your name'
+								value={name}
+								onChange={(e) => setName(e.target.value)}></Form.Control>
 						</Form.Group>
 
 						<Form.Group controlId='email'>
 							<Form.Label>Email Address</Form.Label>
-							<Form.Control type='email' placeholder='Enter your email' value={email} onChange={(e) => setEmail(e.target.value)}></Form.Control>
+							<Form.Control
+								type='email'
+								placeholder='Enter your email'
+								value={email}
+								onChange={(e) => setEmail(e.target.value)}></Form.Control>
 						</Form.Group>
 
 						<Form.Group controlId='isAdmin'>
-							<Form.Check type='checkbox' label='Is Admin' checked={isAdmin} onChange={(e) => setIsAdmin(e.target.checked)}></Form.Check>
+							<Form.Check
+								type='checkbox'
+								label='Is Admin'
+								checked={isAdmin}
+								onChange={(e) => setIsAdmin(e.target.checked)}></Form.Check>
 						</Form.Group>
 						<Button type='submit' variant='primary'>
 							Update

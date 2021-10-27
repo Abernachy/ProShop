@@ -4,8 +4,8 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { Button, Row, Col, ListGroup, Image, Card } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
-import Message from '../components/Message'
-import Loader from '../components/Loader'
+import Message from '../Components/Message'
+import Loader from '../Components/Loader'
 import { getOrderDetails, payOrder, deliverOrder } from '../actions/orderActions'
 import { ORDER_PAY_RESET, ORDER_DELIVER_RESET } from '../constants/orderConstants'
 
@@ -35,9 +35,7 @@ const OrderScreen = ({ history, match }) => {
 			return (Math.round(num * 100) / 100).toFixed(2)
 		}
 
-		order.itemsPrice = addDecimals(
-			order.orderItems.reduce((acc, item) => acc + item.price * item.qty, 0)
-		)
+		order.itemsPrice = addDecimals(order.orderItems.reduce((acc, item) => acc + item.price * item.qty, 0))
 	}
 
 	useEffect(() => {
@@ -96,8 +94,8 @@ const OrderScreen = ({ history, match }) => {
 							<a href={`mailto:  ${order.user.email}`}>{order.user.email}</a>
 							<p>
 								<strong>Address: </strong>
-								{order.shippingAddress.address},{order.shippingAddress.city},
-								{order.shippingAddress.postalCode},{order.shippingAddress.country}
+								{order.shippingAddress.address},{order.shippingAddress.city},{order.shippingAddress.postalCode},
+								{order.shippingAddress.country}
 							</p>
 							{order.isDelivered ? (
 								<Message variant='success'>Delivered on {order.deliveredAt}</Message>
@@ -188,13 +186,7 @@ const OrderScreen = ({ history, match }) => {
 								{loadingDeliver && <Loader />}
 								{userInfo && userInfo.isAdmin && order.isPaid && !order.isDelivered && (
 									<ListGroup.Item>
-										<Button
-											type='button'
-											className='btn btn-block'
-											onClick={deliverHandler}
-											Mark
-											As
-											Delivered>
+										<Button type='button' className='btn btn-block' onClick={deliverHandler} Mark As Delivered>
 											Mark As Delivered
 										</Button>
 									</ListGroup.Item>
