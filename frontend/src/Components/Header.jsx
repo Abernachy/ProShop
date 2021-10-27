@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom'
 import { LinkContainer } from 'react-router-bootstrap'
 import { Container, Navbar, Nav, NavDropdown } from 'react-bootstrap'
 import { logout } from '../actions/userActions'
-import SearchBox from './SearchBox'
+import SearchBox from './SearchBox.jsx'
 
 const Header = ({ history }) => {
 	const dispatch = useDispatch()
