@@ -3,9 +3,9 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Form, Button } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
-import Message from '../components/Message'
-import Loader from '../components/Loader'
-import FormContainer from '../components/FormContainer'
+import Message from '../Components/Message'
+import Loader from '../Components/Loader'
+import FormContainer from '../Components/FormContainer'
 import { listProductDetails, updateProduct } from '../actions/productActions'
 import { PRODUCT_UPDATE_RESET } from '../constants/productConstants'
 
@@ -130,11 +130,7 @@ const ProductEditScreen = ({ match, history }) => {
 								placeholder='Enter image url'
 								value={image}
 								onChange={(e) => setImage(e.target.value)}></Form.Control>
-							<Form.File
-								id='image-file'
-								label='Choose File'
-								custom
-								onChange={uploadFileHandler}></Form.File>
+							<Form.File id='image-file' label='Choose File' custom onChange={uploadFileHandler}></Form.File>
 							{uploading && <Loader />}
 						</Form.Group>
 
