@@ -10,18 +10,18 @@ Welcome to my repo of the Traversify Media's ProShop course. I started this proj
 
 Clone the repo and do npm install in both the root and the front end. Then set up your .env file as shown below:
 
-'''
+```
 NODE_ENV = development
 PORT = 5000
 MONGO_URI = ${MongoDB URI} (you set this up)
 JWT_SECRET =${JWT Secret} (you also set that up)
 PAYPAL_CLIENT_ID= ${PayPal sandbox ID} (you also set that up)
 
-'''
+```
 
 ### Running the server and the client
 
-'''
+```
 npm run dev -> concurrently starts the back and front end
 npm run data:import -> imports the seed data into the database
-'''
+```
